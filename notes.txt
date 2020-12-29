@@ -1,0 +1,6 @@
+//Assign players to games
+//Edit Players (delete)
+//Edit Partners (delete)
+//Edit Cards (delete)
+//Deactivate Card
+
