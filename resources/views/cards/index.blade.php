@@ -11,7 +11,6 @@
                 <thead>
                 <tr>
                     <th>اسم ولي الأمر</th>
-                    <th>الجهة</th>
                     <th>رقم التليفون</th>
                     <th>رقم تحقيق الشخصية</th>
                     <th>الحالة</th>
@@ -25,7 +24,6 @@
                 @foreach($cards as $card)
                     <tr id="card_id_{{$card->id}}">
                         <td>{{$card->MainMemberName}}</td>
-                        <td>{{$card->Type}}</td>
                         <td>{{$card->Mobile}}</td>
                         <td>{{$card->NationalID}}</td>
                         <td>@if($card->State==1) <a class="fas fa-check-circle fa-lg" style="color: green"></a>

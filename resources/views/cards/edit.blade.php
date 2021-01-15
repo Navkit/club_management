@@ -30,18 +30,7 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
-
-
-                    <label class="col-3 m-t-15">الجهة</label>
-                    <div class="col-md-9">
-                        <select class=" form-control custom-select" name="Type" id="Type"
-                                style="width: 100%; height:36px;">
-                            <option value="عسكري">عسكري</option>
-                            <option value="مدني">مدني</option>
-                        </select>
-                    </div>
-                </div>
+             
                 <div class="form-group row">
                     <label for="fname"
                            class="col-sm-3  control-label col-form-label">المؤهل الدراسي:</label>
@@ -79,50 +68,26 @@
                         <input type="text" class="form-control"  value="{{$card->Notes}}" id="Notes" name="Notes">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">صورة تحقيق الشخصية العسكرية:</label>
-                    <div class="col-sm-3 ">
-                        <input type="file" class="form-control"    id="MilCardImg" name="MilCardImg">
-
-                    </div>
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">صورة البطاقة العلاجية:</label>
-                    <div class="col-sm-3">
-                        <input type="file" class="form-control"   id="MedCardImg" name="MedCardImg">
-
-                    </div>
-                </div>
+                
 
 
                 <div class="form-group row">
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">صورة البطاقة العائلية:</label>
-                    <div class="col-sm-3">
-                        <input type="file" class="form-control"   id="FamCardImg" name="FamCardImg">
-
-                    </div>
+                   
                     <label for="fname"
                            class="col-sm-3  control-label col-form-label">صورة تحقيق الشخصية للزوج:</label>
                     <div class="col-sm-3">
                         <input type="file" class="form-control"   id="IDcardImg1" name="IDcardImg1">
 
                     </div>
-                </div>
-
-                <div class="form-group row">
                     <label for="fname"
                            class="col-sm-3  control-label col-form-label">صورة تحقيق الشخصية للزوجة:</label>
                     <div class="col-sm-3">
                         <input type="file" class="form-control"   id="IDcardImg2" name="IDcardImg2">
 
                     </div>
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">صورة استمارة الكشف الطبي:</label>
-                    <div class="col-sm-3">
-                        <input type="file" class="form-control"   id="MedRevImg" name="MedRevImg">
-                    </div>
                 </div>
+
+               
                 <div class="border-top">
                     <div class="card-body">
                         <button type="button" onclick="submit()" class="btn btn-primary">حفظ البيانات</button>

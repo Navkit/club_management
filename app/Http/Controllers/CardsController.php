@@ -48,27 +48,12 @@ class CardsController extends Controller
         $card->MainMemberName=$request->MainMemberName;
         $card->NationalID=$request->NationalID;
         $card->Mobile=$request->Mobile;
-        $card->Type=$request->Type;
+        // $card->Type=$request->Type;
         $card->Certificate=$request->Certificate;
         $card->Job=$request->Job;
         $card->Address=$request->Address;
         $card->State=1;
 
-        if($request->file('MilCardImg')){
-        $MilCardImg=time()."MilCardImg".$request->file('MilCardImg')->getClientOriginalName();
-        $request->file('MilCardImg')->move('imgs',$MilCardImg);
-        $card->MilCardImg=$MilCardImg;
-        }
-        if($request->file('MedCardImg')){
-        $MedCardImg=time()."MedCardImg".$request->file('MedCardImg')->getClientOriginalName();
-        $request->file('MedCardImg')->move('imgs',$MedCardImg);
-        $card->MedCardImg=$MedCardImg;
-        }
-        if($request->file('FamCardImg')){
-        $FamCardImg=time()."FamCardImg".$request->file('FamCardImg')->getClientOriginalName();
-        $request->file('FamCardImg')->move('imgs',$FamCardImg);
-        $card->FamCardImg=$FamCardImg;
-        }
         if($request->file('IDcardImg1')){
         $IDCardImg1=time()."IDcardImg1".$request->file('IDcardImg1')->getClientOriginalName();
         $request->file('IDcardImg1')->move('imgs',$IDCardImg1);
@@ -83,12 +68,7 @@ class CardsController extends Controller
         }
 
 
-        if($request->file('MedRevImg')){
-            $MeDrevImg=time()."MedRevImg".$request->file('MedRevImg')->getClientOriginalName();
-            $request->file('MedRevImg')->move('imgs',$MeDrevImg);
-            $card->MedRevImg=$MeDrevImg;
-        }
-
+        
         $card->save();
 
         for($i=1;$i<=$request->plcount;$i++)
@@ -182,7 +162,7 @@ class CardsController extends Controller
         $card->MainMemberName=$request->MainMemberName;
         $card->NationalID=$request->NationalID;
         $card->Mobile=$request->Mobile;
-        $card->Type=$request->Type;
+        // $card->Type=$request->Type;
         $card->Certificate=$request->Certificate;
         $card->Job=$request->Job;
         $card->Address=$request->Address;
@@ -191,28 +171,6 @@ class CardsController extends Controller
             $card->State=1;
         else
             $card->State=0;
-        if($request->file('MilCardImg')){
-            if ($card->MilCardImg!='default-image.PNG'&& file_exists("imgs/$card->MilCardImg"))
-                unlink("imgs/$card->MilCardImg");
-            $MilCardImg=time()."MilCardImg".$request->file('MilCardImg')->getClientOriginalName();
-            $request->file('MilCardImg')->move('imgs',$MilCardImg);
-            $card->MilCardImg=$MilCardImg;
-        }
-        if($request->file('MedCardImg')){
-            if ($card->MedCardImg!='default-image.PNG' && file_exists("imgs/$card->MedCardImg"))
-                unlink("imgs/$card->MedCardImg");
-            $MedCardImg=time()."MedCardImg".$request->file('MedCardImg')->getClientOriginalName();
-            $request->file('MedCardImg')->move('imgs',$MedCardImg);
-            $card->MedCardImg=$MedCardImg;
-        }
-        if($request->file('FamCardImg')){
-            if ($card->FamCardImg!='default-image.PNG'&& file_exists("imgs/$card->FamCardImg"))
-
-                unlink("imgs/$card->FamCardImg");
-            $FamCardImg=time()."FamCardImg".$request->file('FamCardImg')->getClientOriginalName();
-            $request->file('FamCardImg')->move('imgs',$FamCardImg);
-            $card->FamCardImg=$FamCardImg;
-        }
         if($request->file('IDcardImg1')){
             if ($card->IDcardImg1!='default-image.PNG'&& file_exists("imgs/$card->IDcardImg1"))
 
@@ -233,15 +191,7 @@ class CardsController extends Controller
         }
 
 
-        if($request->file('MedRevImg')){
-            if ($card->MedRevImg!='default-image.PNG'&& file_exists("imgs/$card->MedRevImg"))
-                unlink("imgs/$card->MedRevImg");
-            $MeDrevImg=time()."MedRevImg".$request->file('MedRevImg')->getClientOriginalName();
-            $request->file('MedRevImg')->move('imgs',$MeDrevImg);
-            $card->MedRevImg=$MeDrevImg;
-        }
-
-
+        
         $card->save();
 
         Session::flash('message', 'تم تحديث العضوية بنجاح');
