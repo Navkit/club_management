@@ -46,7 +46,7 @@
 
 
         <div class="form-group row">
-            <label for="fname" class="col-sm-3  control-label col-form-label">صورة تحقيق الشخصية العسكرية:</label>
+            <label for="fname" class="col-sm-3  control-label col-form-label">صورة تحقيق الشخصية :</label>
             <div class="col-sm-9">
                 <div class="card">
                     <div class="el-card-item">
