@@ -12,88 +12,82 @@
                     <ul>
                         <li>
                             @error('name')
-                            {{"رجاء ادخال اسم الذبون "}}
+                            {{"Please enter the customer's name."}}
                             @enderror
                         </li>
-
-
                     </ul>
                 </div>
             @endif
-            <h4 class="card-title">تعديل منتج</h4>
+            <h4 class="card-title">Edit Product</h4>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">رقم المسلسل:</label>
+                       class="col-sm-3  control-label col-form-label">Serial Number:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" readonly value="{{$card->id}}" id="id" name="id">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">اسم ولي الأمر:</label>
+                       class="col-sm-3  control-label col-form-label">Guardian's Name:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" readonly value="{{$card->MainMemberName}}" id="name" name="name">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">رقم تحقيق الشخصية:</label>
+                       class="col-sm-3  control-label col-form-label">National ID Number:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" readonly value="{{$card->NationalID}}" id="name" name="name">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">رقم التليفون:</label>
+                       class="col-sm-3  control-label col-form-label">Phone Number:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" readonly value="{{$card->Mobile}}" id="name" name="name">
                 </div>
             </div>
 
-            
-                <div class="form-group row">
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">العنوان:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control"  readonly value="{{$card->Address}}"  id="Address" name="Address">
-                    </div>
-                </div>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">المؤهل الدراسي:</label>
+                       class="col-sm-3  control-label col-form-label">Address:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" readonly value="{{$card->Address}}" id="Address" name="Address">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fname"
+                       class="col-sm-3  control-label col-form-label">Education Level:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" readonly value="{{$card->Certificate}}" id="name" name="name">
                 </div>
             </div>
-                <div class="form-group row">
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">الوظيفة:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" readonly value="{{$card->Job}}" id="name" name="name">
-                    </div>
+            <div class="form-group row">
+                <label for="fname"
+                       class="col-sm-3  control-label col-form-label">Job:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" readonly value="{{$card->Job}}" id="name" name="name">
                 </div>
-
-                <div class="form-group row">
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">الحالة:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" readonly value="{{($card->State)?'ساري':'موقوف'}}" id="name" name="name">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="fname"
-                           class="col-sm-3  control-label col-form-label">الملاحظات:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" readonly value="{{$card->Notes}}" id="name" name="name">
-                    </div>
-                </div>
-
-           
+            </div>
 
             <div class="form-group row">
-               
                 <label for="fname"
-                       class="col-sm-6  control-label col-form-label">صورة تحقيق الشخصية للزوج:</label>
+                       class="col-sm-3  control-label col-form-label">Status:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" readonly value="{{($card->State)?'Active':'Suspended'}}" id="name" name="name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fname"
+                       class="col-sm-3  control-label col-form-label">Notes:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" readonly value="{{$card->Notes}}" id="name" name="name">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname"
+                       class="col-sm-6  control-label col-form-label">Husband's National ID Image:</label>
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="el-card-item">
@@ -107,7 +101,7 @@
 
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-6  control-label col-form-label">صورة تحقيق الشخصية للزوجة:</label>
+                       class="col-sm-6  control-label col-form-label">Wife's National ID Image:</label>
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="el-card-item">
@@ -117,14 +111,11 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
-
-
 
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">تاريخ التسجيل:</label>
+                       class="col-sm-3  control-label col-form-label">Registration Date:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" readonly value="{{$card->RegistrationDate}}" id="name" name="name">
                 </div>
@@ -133,8 +124,8 @@
         </div>
         <div class="border-top">
             <div class="card-body">
-                <a href="/cardplayers/{{$card->id}}" class="btn btn-info">اللاعبين</a>
-                <a href="/cardpartners/{{$card->id}}" class="btn btn-primary">المرافقين</a>
+                <a href="/cardplayers/{{$card->id}}" class="btn btn-info">Players</a>
+                <a href="/cardpartners/{{$card->id}}" class="btn btn-primary">Partners</a>
             </div>
         </div>
 
@@ -144,4 +135,4 @@
     <script src="/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
     <script src="/assets/libs/magnific-popup/meg.init.js"></script>
 
-@endsection
+@endsection 

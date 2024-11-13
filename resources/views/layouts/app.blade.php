@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +14,29 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif; /* English-friendly font */
+            direction: ltr; /* Left to right text direction */
+        }
+
+        .navbar, .navbar-light, .dropdown-menu {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clear UI font */
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .dropdown-menu {
+            text-align: left; /* Ensuring dropdown items are aligned left */
+        }
+    </style>
 </head>
 <body>
     <div id="app">

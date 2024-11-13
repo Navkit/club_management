@@ -6,48 +6,47 @@
     <form id="example-form" method="post" action="/editcard/{{$card->id}}"  enctype="multipart/form-data" class="m-t-40">
         @csrf
         <div style="padding-right: 2%;padding-left: 2%">
-            <h3>العضوية</h3>
+            <h3>Membership</h3>
             <section>
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">اسم ولي الأمر:</label>
+                           class="col-sm-3  control-label col-form-label">Guardian's Name:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" value="{{$card->MainMemberName}}" id="MainMemberName" name="MainMemberName">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">رقم تحقيق الشخصية:</label>
+                           class="col-sm-3  control-label col-form-label">National ID Number:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" value="{{$card->NationalID}}" id="NationalID" name="NationalID">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">رقم التليفون:</label>
+                           class="col-sm-3  control-label col-form-label">Phone Number:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control"  value="{{$card->Mobile}}" id="Mobile" name="Mobile">
                     </div>
                 </div>
 
-             
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">المؤهل الدراسي:</label>
+                           class="col-sm-3  control-label col-form-label">Academic Qualification:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" value="{{$card->Certificate}}"  id="Certificate" name="Certificate">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">الوظيفة:</label>
+                           class="col-sm-3  control-label col-form-label">Job:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" value="{{$card->Job}}"  id="Job" name="Job">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">العنوان:</label>
+                           class="col-sm-3  control-label col-form-label">Address:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" value="{{$card->Address}}"  id="Address" name="Address">
                     </div>
@@ -55,42 +54,36 @@
 
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">الحالة:</label>
+                           class="col-sm-3  control-label col-form-label">Status:</label>
                     <div class="custom-control custom-checkbox col-sm-9">
                         <input type="checkbox" class="custom-control-input" id="customControlAutosizing1"  name="State" @if($card->State) checked @endif >
-                        <label class="custom-control-label" for="customControlAutosizing1" ></label>
+                        <label class="custom-control-label" for="customControlAutosizing1"></label>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">الملاحظات:</label>
+                           class="col-sm-3  control-label col-form-label">Notes:</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control"  value="{{$card->Notes}}" id="Notes" name="Notes">
                     </div>
                 </div>
-                
-
 
                 <div class="form-group row">
-                   
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">صورة تحقيق الشخصية للزوج:</label>
+                           class="col-sm-3  control-label col-form-label">Husband's ID Image:</label>
                     <div class="col-sm-3">
                         <input type="file" class="form-control"   id="IDcardImg1" name="IDcardImg1">
-
                     </div>
                     <label for="fname"
-                           class="col-sm-3  control-label col-form-label">صورة تحقيق الشخصية للزوجة:</label>
+                           class="col-sm-3  control-label col-form-label">Wife's ID Image:</label>
                     <div class="col-sm-3">
                         <input type="file" class="form-control"   id="IDcardImg2" name="IDcardImg2">
-
                     </div>
                 </div>
 
-               
                 <div class="border-top">
                     <div class="card-body">
-                        <button type="button" onclick="submit()" class="btn btn-primary">حفظ البيانات</button>
+                        <button type="button" onclick="submit()" class="btn btn-primary">Save Data</button>
                     </div>
                 </div>
             </section>

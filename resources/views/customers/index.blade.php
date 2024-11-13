@@ -5,16 +5,16 @@
 @endsection
 @section('content')
     <div class="card-body">
-        <h5 class="card-title">الذبائن</h5>
+        <h5 class="card-title">Customers</h5>
         <div class="table-responsive">
             <table id="zero_config" class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th>رقم مسلسل</th>
-                    <th>رتبه/درجه</th>
-                    <th>الاسم</th>
-                    <th>تعديل</th>
-                    <th>حذف</th>
+                    <th>Serial Number</th>
+                    <th>Rank/Level</th>
+                    <th>Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,9 +23,9 @@
                         <td>{{$customer->id}}</td>
                         <td>{{$customer->rank->name}}</td>
                         <td>{{$customer->name}}</td>
-                        <td><a href="editcustomer/{{$customer->id}}" class="btn btn-info">تعديل</a></td>
+                        <td><a href="editcustomer/{{$customer->id}}" class="btn btn-info">Edit</a></td>
                         <td><a href="javascript:void(0)" data-id="{{ $customer->id }}"
-                               class="btn btn-danger delete-customer">حذف </a></td>
+                               class="btn btn-danger delete-customer">Delete </a></td>
 
                     </tr>
                 @endforeach
@@ -59,27 +59,26 @@
          ****************************************/
         $('#zero_config').DataTable({
                 "language": {
-                    "sProcessing": "جاري التحميل...",
-                    "sLengthMenu": "إظهار _MENU_ المدخلات",
-                    "sZeroRecords": "لا يوجد سجلات مطابقة",
-                    "sEmptyTable": "لا يوجد بيانات متاحة في الجدول",
-                    "sInfo": "إظهار _START_ من _END_ اجمالي _TOTAL_ مدخلات",
-                    "sInfoEmpty": "إظهار 0 to 0 of 0 المدخلات",
-                    "sInfoFiltered": '(مصفاه من _MAX_ جميع المدخلات)',
-                    "sInfoPostFix": "",
-                    "sSearch": 'بحث:',
+                    "sProcessing": "Loading...",
+                    "sLengthMenu": "Show _MENU_ entries",
+                    "sZeroRecords": "No matching records found",
+                    "sEmptyTable": "No data available in table",
+                    "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+                    "sInfoEmpty": "Showing 0 to 0 of 0 entries",
+                    "sInfoFiltered": "(filtered from _MAX_ total entries)",
+                    "sSearch": 'Search:',
                     "sUrl": "",
                     "sInfoThousands": ",",
-                    "sLoadingRecords": "جاري التحميل...",
+                    "sLoadingRecords": "Loading...",
                     "oPaginate": {
-                        "sFirst": "الأول",
-                        "sLast": "الأخير",
-                        "sNext": "التالى",
-                        "sPrevious": "السابق"
+                        "sFirst": "First",
+                        "sLast": "Last",
+                        "sNext": "Next",
+                        "sPrevious": "Previous"
                     },
                     "oAria": {
-                        "sSortAscending": ": تنشيط ليتم الترتيب تصاعدياً",
-                        "sSortDescending": ": تنشيط حتي يتم الترتيب تنازلي"
+                        "sSortAscending": ": Activate to sort column ascending",
+                        "sSortDescending": ": Activate to sort column descending"
                     }
                 }
             }

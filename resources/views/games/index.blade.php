@@ -5,15 +5,15 @@
 @endsection
 @section('content')
     <div class="card-body">
-        <h5 class="card-title">المنتجات</h5>
+        <h5 class="card-title">Games</h5>
         <div class="table-responsive">
             <table id="zero_config" class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th>اسم اللعبة</th>
-                    <th>اللاعبين</th>
-                    <th>تعديل</th>
-                    <th>حذف</th>
+                    <th>Game Name</th>
+                    <th>Players</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -21,16 +21,11 @@
                 @foreach($games as $game)
                 <tr id="game_id_{{$game->id}}">
                     <td>{{$game->Name}}</td>
-                    <td><a href="viewplayers/{{$game->id}}" class="btn btn-dribbble">اللاعبين</a></td>
-                    <td><a href="editgame/{{$game->id}}" class="btn btn-info">تعديل</a></td>
-                    <td><a href="javascript:void(0)" data-id="{{ $game->id }}" class="btn btn-danger delete-game"  >حذف </a> </td>
-
-
+                    <td><a href="viewplayers/{{$game->id}}" class="btn btn-dribbble">Players</a></td>
+                    <td><a href="editgame/{{$game->id}}" class="btn btn-info">Edit</a></td>
+                    <td><a href="javascript:void(0)" data-id="{{ $game->id }}" class="btn btn-danger delete-game"  >Delete</a></td>
                 </tr>
                 @endforeach
-
-
-
 
                 </tbody>
             </table>
@@ -62,27 +57,27 @@
          ****************************************/
         $('#zero_config').DataTable({
             "language": {
-                "sProcessing":    "جاري التحميل...",
-                "sLengthMenu":    "إظهار _MENU_ المدخلات",
-                "sZeroRecords":   "لا يوجد سجلات مطابقة",
-                "sEmptyTable":    "لا يوجد بيانات متاحة في الجدول",
-                "sInfo":          "إظهار _START_ من _END_ اجمالي _TOTAL_ مدخلات",
-                "sInfoEmpty":     "إظهار 0 to 0 of 0 المدخلات",
-                "sInfoFiltered": '(مصفاه من _MAX_ جميع المدخلات)',
+                "sProcessing":    "Loading...",
+                "sLengthMenu":    "Show _MENU_ entries",
+                "sZeroRecords":   "No matching records found",
+                "sEmptyTable":    "No data available in table",
+                "sInfo":          "Showing _START_ to _END_ of _TOTAL_ entries",
+                "sInfoEmpty":     "Showing 0 to 0 of 0 entries",
+                "sInfoFiltered": '(filtered from _MAX_ total entries)',
                 "sInfoPostFix":   "",
-                "sSearch":        'بحث:',
+                "sSearch":        'Search:',
                 "sUrl":           "",
                 "sInfoThousands":  ",",
-                "sLoadingRecords": "جاري التحميل...",
+                "sLoadingRecords": "Loading...",
                 "oPaginate": {
-                    "sFirst":    "الأول",
-                    "sLast":    "الأخير",
-                    "sNext":    "التالى",
-                    "sPrevious": "السابق"
+                    "sFirst":    "First",
+                    "sLast":    "Last",
+                    "sNext":    "Next",
+                    "sPrevious": "Previous"
                 },
                 "oAria": {
-                    "sSortAscending":  ": تنشيط ليتم الترتيب تصاعدياً",
-                    "sSortDescending": ": تنشيط حتي يتم الترتيب تنازلي"
+                    "sSortAscending":  ": activate to sort column ascending",
+                    "sSortDescending": ": activate to sort column descending"
                 }
             }
         }

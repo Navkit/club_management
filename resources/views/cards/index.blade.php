@@ -5,18 +5,18 @@
 @endsection
 @section('content')
     <div class="card-body">
-        <h5 class="card-title">العضويات</h5>
+        <h5 class="card-title">Memberships</h5>
         <div class="table-responsive">
             <table id="zero_config" class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th>اسم ولي الأمر</th>
-                    <th>رقم التليفون</th>
-                    <th>رقم تحقيق الشخصية</th>
-                    <th>الحالة</th>
-                    <th>عرض البيانات</th>
-                    <th>تعديل</th>
-                    <th>حذف</th>
+                    <th>Guardian's Name</th>
+                    <th>Phone Number</th>
+                    <th>National ID Number</th>
+                    <th>Status</th>
+                    <th>View Data</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,12 +28,10 @@
                         <td>{{$card->NationalID}}</td>
                         <td>@if($card->State==1) <a class="fas fa-check-circle fa-lg" style="color: green"></a>
                             @else  <a class=" fas fa-times-circle fa-lg" style="color: red"></a> @endif</td>
-                        <td><a href="showcard/{{$card->id}}" class="btn btn-cyan">عرض البيانات</a></td>
-                        <td><a href="editcard/{{$card->id}}" class="btn btn-info">تعديل</a></td>
+                        <td><a href="showcard/{{$card->id}}" class="btn btn-cyan">View Data</a></td>
+                        <td><a href="editcard/{{$card->id}}" class="btn btn-info">Edit</a></td>
                         <td><a href="javascript:void(0)" data-id="{{ $card->id }}"
-                               class="btn btn-danger delete-card">حذف </a></td>
-
-
+                               class="btn btn-danger delete-card">Delete</a></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -66,27 +64,27 @@
          ****************************************/
         $('#zero_config').DataTable({
                 "language": {
-                    "sProcessing": "جاري التحميل...",
-                    "sLengthMenu": "إظهار _MENU_ المدخلات",
-                    "sZeroRecords": "لا يوجد سجلات مطابقة",
-                    "sEmptyTable": "لا يوجد بيانات متاحة في الجدول",
-                    "sInfo": "إظهار _START_ من _END_ اجمالي _TOTAL_ مدخلات",
-                    "sInfoEmpty": "إظهار 0 to 0 of 0 المدخلات",
-                    "sInfoFiltered": '(مصفاه من _MAX_ جميع المدخلات)',
+                    "sProcessing": "Loading...",
+                    "sLengthMenu": "Show _MENU_ entries",
+                    "sZeroRecords": "No matching records found",
+                    "sEmptyTable": "No data available in table",
+                    "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+                    "sInfoEmpty": "Showing 0 to 0 of 0 entries",
+                    "sInfoFiltered": "(filtered from _MAX_ total entries)",
                     "sInfoPostFix": "",
-                    "sSearch": 'بحث:',
+                    "sSearch": 'Search:',
                     "sUrl": "",
                     "sInfoThousands": ",",
-                    "sLoadingRecords": "جاري التحميل...",
+                    "sLoadingRecords": "Loading...",
                     "oPaginate": {
-                        "sFirst": "الأول",
-                        "sLast": "الأخير",
-                        "sNext": "التالى",
-                        "sPrevious": "السابق"
+                        "sFirst": "First",
+                        "sLast": "Last",
+                        "sNext": "Next",
+                        "sPrevious": "Previous"
                     },
                     "oAria": {
-                        "sSortAscending": ": تنشيط ليتم الترتيب تصاعدياً",
-                        "sSortDescending": ": تنشيط حتي يتم الترتيب تنازلي"
+                        "sSortAscending": ": activate to sort column ascending",
+                        "sSortDescending": ": activate to sort column descending"
                     }
                 }
             }

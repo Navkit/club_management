@@ -1,92 +1,84 @@
-@extends('layouts.master')
-@section('styles')
+<!DOCTYPE html>
+<html dir="ltr">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <!-- Custom CSS -->
+    <link href="dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Standard English font */
+        }
+    </style>
+</head>
 
-@endsection
-@section('content')
-    <div class="card-body">
-        <h5 class="card-title">اللاعبين الخاصيين بالعضوية رقم  {{$card->id}}</h5>
-        <div class="table-responsive">
-            <table id="zero_config" class="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <th>اسم اللاعب</th>
-                    <th>صورة اللاعب</th>
-                    <th>صورة تحقيق الشخصية</th>
-                    <th>الالعاب</th>
-                    <th>عضوية اللاعب</th>
-                    <th>حذف</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($card->players as $player)
-                    <tr id="player_id_{{$player->id}}">
-                        <td>{{$player->Name}}</td>
-                        <td><img src='{{asset("imgs/$player->Img")}}' height="100px" alt=""></td>
-                        <td><img src='{{asset("imgs/$player->NIDImg")}}' height="100px" alt=""></td>
-                        <td><a href="/showplayer/{{$player->id}}" class="btn btn-info">الالعاب</a></td>
-                        <td><a href="/showcard/{{$player->Card_ID}}" class="btn btn-info">عضوية اللاعب</a></td>
-                        <td><a href="javascript:void(0)" data-id="{{ $player->id }}" class="btn btn-danger delete-game"  >حذف </a> </td>
-
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+<body>
+    <div class="main-wrapper">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
+            <div class="auth-box bg-dark border-top border-secondary">
+                <div>
+                    <div class="text-center p-t-20 p-b-20">
+                        <span class="db"><img src="assets/images/logo.png" alt="logo" /></span>
+                    </div>
+                    <form class="form-horizontal m-t-20" action="index.html">
+                        <div class="row p-b-30">
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-top border-secondary">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="p-t-20">
+                                        <button class="btn btn-block btn-lg btn-info" type="submit">Register</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
     </div>
-@endsection
-
-@section('scripts')
-    <script src="{{asset("assets/extra-libs/DataTables/datatables.min.js")}}"></script>
+    <!-- All Required JS -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        $('body').on('click', '.delete-game', function () {
-            debugger
-            var player_id = $(this).data("id");
+        $('[data-toggle="tooltip"]').tooltip();
+        $(".preloader").fadeOut();
+    </script>
+</body>
 
-            $.ajax({
-                type: "GET",
-                url: "{{ url('/deleteplayer')}}"+'/'+player_id,
-                success: function (data) {
-                    $("#player_id_" + player_id).fadeOut(500);
-                },
-                error: function (data) {
-                    console.log('Error:', data);
-                }
-            });
-        });
-    </script>
-    <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('#zero_config').DataTable({
-                "language": {
-                    "sProcessing":    "جاري التحميل...",
-                    "sLengthMenu":    "إظهار _MENU_ المدخلات",
-                    "sZeroRecords":   "لا يوجد سجلات مطابقة",
-                    "sEmptyTable":    "لا يوجد بيانات متاحة في الجدول",
-                    "sInfo":          "إظهار _START_ من _END_ اجمالي _TOTAL_ مدخلات",
-                    "sInfoEmpty":     "إظهار 0 to 0 of 0 المدخلات",
-                    "sInfoFiltered": '(مصفاه من _MAX_ جميع المدخلات)',
-                    "sInfoPostFix":   "",
-                    "sSearch":        'بحث:',
-                    "sUrl":           "",
-                    "sInfoThousands":  ",",
-                    "sLoadingRecords": "جاري التحميل...",
-                    "oPaginate": {
-                        "sFirst":    "الأول",
-                        "sLast":    "الأخير",
-                        "sNext":    "التالى",
-                        "sPrevious": "السابق"
-                    },
-                    "oAria": {
-                        "sSortAscending":  ": تنشيط ليتم الترتيب تصاعدياً",
-                        "sSortDescending": ": تنشيط حتي يتم الترتيب تنازلي"
-                    }
-                }
-            }
-        );
-    </script>
-@endsection
+</html>

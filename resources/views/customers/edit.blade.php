@@ -10,25 +10,23 @@
                     <ul>
                         <li>
                             @error('name')
-                            {{"رجاء ادخال اسم الذبون "}}
+                            {{"Please enter the customer's name."}}
                             @enderror
                         </li>
-
-
                     </ul>
                 </div>
             @endif
-            <h4 class="card-title">تعديل منتج</h4>
+            <h4 class="card-title">Edit Product</h4>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">رقم المسلسل:</label>
+                       class="col-sm-3  control-label col-form-label">Serial Number:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" readonly value="{{$customer->id}}" id="id" name="id">
                 </div>
             </div>
             <div class="form-group row">
 
-                <label class="col-3 m-t-15">رتبه/درجه</label>
+                <label class="col-3 m-t-15">Rank/Level</label>
                 <div class="col-md-9">
                     <select class="select2 form-control custom-select" name="rank" id="rank"
                             style="width: 100%; height:36px;">
@@ -36,13 +34,12 @@
                             <option @if($rank->id==$customer->rank_id) selected
                                     @endif value="{{$rank->id}}">{{$rank->name}}</option>
                         @endforeach
-
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">اسم السلعه:</label>
+                       class="col-sm-3  control-label col-form-label">Product Name:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" value="{{$customer->name}}" id="name" name="name">
                 </div>
@@ -51,7 +48,7 @@
         </div>
         <div class="border-top">
             <div class="card-body">
-                <button type="button" onclick="submit()" class="btn btn-primary">اضافه منتج</button>
+                <button type="button" onclick="submit()" class="btn btn-primary">Add Product</button>
             </div>
         </div>
     </form>

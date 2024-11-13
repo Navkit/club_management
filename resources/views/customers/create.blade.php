@@ -10,18 +10,16 @@
                     <ul>
                         <li>
                             @error('name')
-                            {{"رجاء ادخال اسم الذبون "}}
+                            {{"Please enter the customer's name."}}
                             @enderror
                         </li>
-
-
                     </ul>
                 </div>
             @endif
-            <h4 class="card-title">اضافه سلعه جديده</h4>
+            <h4 class="card-title">Add New Product</h4>
             <div class="form-group row">
 
-                <label class="col-3 m-t-15">رتبه/درجه</label>
+                <label class="col-3 m-t-15">Rank/Level</label>
                 <div class="col-md-9">
                     <select class="select2 form-control custom-select" name="rank" id="rank"
                             style="width: 100%; height:36px;">
@@ -35,7 +33,7 @@
             </div>
             <div class="form-group row">
                 <label for="fname"
-                       class="col-sm-3  control-label col-form-label">اسم الذبون:</label>
+                       class="col-sm-3  control-label col-form-label">Customer's Name:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
@@ -44,7 +42,7 @@
         </div>
         <div class="border-top">
             <div class="card-body">
-                <button type="button" onclick="submit()" class="btn btn-primary">اضافه ذبون</button>
+                <button type="button" onclick="submit()" class="btn btn-primary">Add Customer</button>
             </div>
         </div>
     </form>
