@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator,Redirect,Response;
-Use App\User;
+use Validator, Redirect, Response;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
 
-
 class AuthController extends Controller
 {
-
     public function index()
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             return redirect()->intended('/');
         }
         return view('auth.login');
@@ -34,17 +32,14 @@ class AuthController extends Controller
         ]);
 
         $credentials = $request->only('username', 'password');
-        $name=$request->name;
-        $password=$request->password;
-        if (Auth::attempt(['name' => $name, 'password' => $password])) {
-            // Authentication passed...
-            return redirect()->intended('/');
-            echo "1";
-        }
-        echo"2";
-//        return Redirect::to("login")->withSuccess('Oppes! You have entered invalid credentials');
-        return redirect('login')->with('error', 'عذرا اسم المستخدم او كلمه المرور خاطئه');
+        $name = $request->name;
+        $password = $request->password;
 
+        if (Auth::attempt(['name' => $name, 'password' => $password])) {
+            return redirect()->intended('/');
+        }
+        
+        return redirect('login')->with('error', 'Sorry, the username or password is incorrect.');
     }
 
     public function postRegistration(Request $request)
@@ -59,15 +54,12 @@ class AuthController extends Controller
 
         $check = $this->create($data);
 
-        return Redirect::to("/")->withSuccess('Great! You have Successfully loggedin');
+        return Redirect::to("/")->withSuccess('Great! You have successfully logged in');
     }
 
     public function dashboard()
     {
-
-
-            return redirect('/cards');
-
+        return redirect('/cards');
     }
 
     public function create(array $data)
@@ -79,7 +71,8 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout() {
+    public function logout()
+    {
         Session::flush();
         Auth::logout();
         return Redirect('login');

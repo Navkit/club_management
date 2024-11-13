@@ -11,54 +11,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        /*
-        $ranks=['فريق','لواء','عميد','عقيد','مقدم','رائد','نقيب','ملازم أول','ملازم','مساعد اول','مساعد','رقيب اول','رقيب','عريف','جندي'];
-        foreach ($ranks as $rank){
-        DB::table('ranks')->insert([
-            'name' => "$rank",
-            'created_at'=>now()
-        ]);
-        }
+        // Insert new admin user
         DB::table('users')->insert([
-            'name'=>'admin',
-            'password'=>bcrypt('123'),
-            'type'=>'admin'
+            'name' => 'new_admin',  // Replace with your admin username
+            'password' => bcrypt('new_admin_password'),  // Replace with your admin password
+            'type' => 'admin',  // Admin type
         ]);
+    
+        // Insert new regular user
         DB::table('users')->insert([
-            'name'=>'user',
-            'password'=>bcrypt('123'),
-            'type'=>'user'
-        ]);
-
-        for ($i=0;$i<50;$i++) {
-            $x= rand(6,100);
-            $y= rand(0,1);
-            DB::table('items')->insert([
-                'name' => Str::random(10),
-                'sell_price' => $x,
-                'purchase_price' => $x-rand(0,5),
-                'is_countable' => $y,
-
-
-            ]);
-        }
-
-        for ($i=0;$i<50;$i++) {
-            $x= rand(1,15);;
-            DB::table('customers')->insert([
-                'name' => Str::random(10),
-                'rank_id' => $x,
-
-
-
-            ]);
-        }
-        */
-		  DB::table('users')->insert([
-            'name'=>'ahmed',
-            'password'=>bcrypt('123'),
-            'type'=>'admin'
+            'name' => 'new_user',  // Replace with your regular user username
+            'password' => bcrypt('new_user_password'),  // Replace with your regular user password
+            'type' => 'user',  // Regular user type
         ]);
     }
 }

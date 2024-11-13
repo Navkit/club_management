@@ -28,7 +28,7 @@
     </style>
 </head>
 
-<body dir="rtl">
+<body dir="ltr">
     <div class="main-wrapper">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
@@ -59,20 +59,20 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="اسم المستخدم" aria-label="Username" aria-describedby="basic-addon1" required>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="كلمه المرور" aria-label="Password" aria-describedby="basic-addon1" required>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder=" تاكيد كلمه المرور" aria-label="Password" aria-describedby="basic-addon1" required>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <div class="p-t-20">
-                                        <button class="btn btn-block btn-lg btn-info" type="submit">تسجيل</button>
+                                        <button class="btn btn-block btn-lg btn-info" type="submit">Register</button>
                                     </div>
                                 </div>
                             </div>
